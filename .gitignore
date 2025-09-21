@@ -1,0 +1,2 @@
+# Bỏ qua tất cả các file .csv trong thư mục VN_datasets
+datasets/VN_datasets/*.csv

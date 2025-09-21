@@ -23,13 +23,13 @@ market_info:
 data_sources:
   # Raw CSV files (expected format)
   stock_files:
-    path: "data/raw/stocks/"
+    path: "datasets/VN_datasets/"
     pattern: "*.csv"
     encoding: "utf-8"
 
   # Sector mapping
   sector_mapping:
-    file: "data/raw/VN_HOSE_companies.csv"
+    file: "datasets/VN_Companies.csv"
     stock_column: "Symbol"
     sector_column: "Sector"
 

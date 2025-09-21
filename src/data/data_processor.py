@@ -15,8 +15,8 @@ import logging
 from datetime import datetime, timedelta
 import warnings
 
-from utils.seed_utils import set_seed
-from utils.logging_utils import get_logger
+from src.utils.seed_utils import set_seed
+from src.utils.logging_utils import get_logger
 
 logger = get_logger(__name__)
 
@@ -24,6 +24,91 @@ warnings.filterwarnings('ignore', category=FutureWarning)
 
 
 class VietnamDataProcessor:
+    def generate_sliding_windows(self, window_size: int = 16, week_size: int = 5, target_shift: int = 1):
+        """
+        Sinh các cửa sổ trượt (sliding window) cho từng mã cổ phiếu.
+        Mỗi cửa sổ gồm 15 ngày (3 tuần × 5 ngày) + 1 ngày target.
+        Gán nhãn y_return (return ngày tiếp theo), y_move (up/down movement).
+        Returns:
+            Dict[symbol, List[Dict]]: Mỗi symbol là 1 list các dict chứa window, label, v.v.
+        """
+        all_windows = {}
+        for symbol, df in self.stock_data.items():
+            df = df.sort_values('Date').reset_index(drop=True)
+            windows = []
+            for i in range(len(df) - window_size):
+                window_df = df.iloc[i:i+window_size]
+                # 3 tuần × 5 ngày: lấy 15 ngày đầu làm input, ngày thứ 16 làm target
+                input_window = window_df.iloc[:window_size-1]
+                target_row = window_df.iloc[window_size-1]
+                # y_return: return của ngày target (so với close ngày cuối window)
+                prev_close = input_window['Close'].values[-1]
+                target_close = target_row['Close']
+                y_return = (target_close - prev_close) / prev_close if prev_close != 0 else 0.0
+                # y_move: 1 nếu y_return > 0, 0 nếu y_return <= 0
+                y_move = int(y_return > 0)
+                windows.append({
+                    'symbol': symbol,
+                    'start_date': input_window['Date'].values[0],
+                    'end_date': input_window['Date'].values[-1],
+                    'input_window': input_window,
+                    'target_date': target_row['Date'],
+                    'y_return': y_return,
+                    'y_move': y_move
+                })
+            all_windows[symbol] = windows
+        logger.info(f"Generated sliding windows for {len(all_windows)} stocks.")
+        return all_windows
+    def build_common_trading_calendar(self):
+        """
+        Build a common trading calendar (intersection of all trading days).
+        Returns:
+            DatetimeIndex of common trading days
+        """
+        all_dates = []
+        if not self.stock_data:
+            logger.error("No stock data loaded. Please check your data loading step.")
+            return pd.DatetimeIndex([])
+        for symbol, df in self.stock_data.items():
+            if not isinstance(df, pd.DataFrame) or df.empty:
+                logger.warning(f"Stock {symbol} has empty DataFrame, skipping.")
+                continue
+            if 'Date' not in df.columns:
+                logger.warning(f"Stock {symbol} missing 'Date' column, skipping.")
+                continue
+            all_dates.append(pd.Series(df['Date'].dropna().unique()))
+        if not all_dates:
+            logger.error("No trading dates found in any stock data. Please check your CSV files and cleaning logic.")
+            return pd.DatetimeIndex([])
+        # Find intersection of all trading dates
+        common_dates = set(all_dates[0])
+        for dates in all_dates[1:]:
+            common_dates = common_dates & set(dates)
+        if not common_dates:
+            logger.error("No common trading dates found across stocks. Check for inconsistent or missing dates.")
+            return pd.DatetimeIndex([])
+        common_calendar = pd.DatetimeIndex(sorted(common_dates))
+        logger.info(f"Common trading calendar has {len(common_calendar)} dates.")
+        return common_calendar
+
+    def sync_all_stocks_to_calendar(self, calendar=None):
+        """
+        Reindex all stock DataFrames to the common trading calendar.
+        Args:
+            calendar: DatetimeIndex of trading days (if None, build automatically)
+        """
+        if calendar is None:
+            calendar = self.build_common_trading_calendar()
+        for symbol, df in self.stock_data.items():
+            if 'Date' not in df.columns:
+                continue
+            df = df.set_index('Date').reindex(calendar)
+            df['Symbol'] = symbol
+            # Optionally, fill missing values (forward fill then back fill)
+            df = df.fillna(method='ffill').fillna(method='bfill')
+            df = df.reset_index().rename(columns={'index': 'Date'})
+            self.stock_data[symbol] = df
+        logger.info("All stocks synchronized to common trading calendar.")
     """
     Data processor for Vietnam stock market data.
 
@@ -67,7 +152,7 @@ class VietnamDataProcessor:
             Dictionary mapping stock symbols to sectors
         """
         if sector_file is None:
-            sector_file = self.raw_data_path / "VN_HOSE_companies.csv"
+            sector_file = Path(self.data_config.get('sector_mapping', {}).get('file', 'datasets/VN_Companies.csv'))
 
         try:
             sector_df = pd.read_csv(sector_file)
@@ -88,13 +173,17 @@ class VietnamDataProcessor:
         Load stock data from CSV files.
 
         Args:
-            stock_files: List of stock CSV file paths. If None, loads all CSV files in raw_data_path
+            stock_files: List of stock CSV file paths. If None, loads all CSV files from config data_sources
 
         Returns:
             Dictionary mapping stock symbols to their DataFrames
         """
         if stock_files is None:
-            stock_files = list(self.raw_data_path.glob("*.csv"))
+            # Lấy thông tin từ config nếu có
+            stock_files_config = self.config.get('data_sources', {}).get('stock_files', {})
+            stock_path = stock_files_config.get('path', str(self.raw_data_path))
+            stock_pattern = stock_files_config.get('pattern', '*.csv')
+            stock_files = list(Path(stock_path).glob(stock_pattern))
             # Filter out sector mapping file
             stock_files = [f for f in stock_files if 'companies' not in f.name.lower()]
 
@@ -138,10 +227,15 @@ class VietnamDataProcessor:
 
             # Handle column mapping for Vietnamese data
             column_mapping = self.data_config.get('processing', {}).get('column_mapping', {})
+            # Ensure Adj Close is mapped if present
+            if 'Adj Close' not in column_mapping and 'Adj Close' in df.columns:
+                column_mapping['Adj Close'] = 'Adj Close'
             df = df.rename(columns=column_mapping)
 
-            # Check required columns
+            # Check required columns (add Adj Close if present in any file)
             required_cols = self.data_config.get('processing', {}).get('required_columns', [])
+            if 'Adj Close' not in required_cols and 'Adj Close' in df.columns:
+                required_cols = required_cols + ['Adj Close']
             missing_cols = [col for col in required_cols if col not in df.columns]
 
             if missing_cols:
@@ -367,6 +461,9 @@ class VietnamDataProcessor:
         """
         logger.info("Starting feature engineering for all stocks...")
 
+        # Đồng bộ lịch giao dịch chung trước khi xử lý features
+        self.sync_all_stocks_to_calendar()
+
         processed_dfs = []
 
         for symbol, df in self.stock_data.items():
@@ -440,48 +537,23 @@ class VietnamDataProcessor:
 
 # Example usage
 if __name__ == "__main__":
-    # Example configuration
-    config = {
-        'data': {
-            'market': 'vietnam',
-            'processing': {
-                'date_column': 'Date',
-                'required_columns': ['Date', 'Open', 'High', 'Low', 'Close', 'Volume'],
-                'cleaning': {
-                    'remove_zero_volume': True,
-                    'remove_zero_price': True,
-                    'outlier_detection': True,
-                    'outlier_threshold': 3
-                },
-                'min_trading_days': 252
-            }
-        },
-        'feature_engineering': {
-            'technical_indicators': {
-                'sma_periods': [5, 10, 20],
-                'ema_periods': [12, 26],
-                'rsi_period': 14
-            },
-            'returns': {
-                'periods': [1, 5, 10]
-            },
-            'volatility': {
-                'periods': [10, 20],
-                'method': 'std'
-            },
-            'normalization': {
-                'method': 'z_score',
-                'rolling_window': 252
-            }
-        },
-        'paths': {
-            'raw_data': 'data/raw',
-            'processed_data': 'data/processed'
-        }
-    }
+    # Example: Load and merge config.yaml & data_config.yaml for VietnamDataProcessor
+    import yaml
+    with open('configs/config.yaml', 'r', encoding='utf-8') as f:
+        main_config = yaml.safe_load(f)
+    with open('configs/data_config.yaml', 'r', encoding='utf-8') as f:
+        data_config = yaml.safe_load(f)
+
+    # Merge data_config vào main_config (ưu tiên data_sources, processing, feature_engineering...)
+    merged_config = main_config.copy()
+    merged_config['data_sources'] = data_config.get('data_sources', {})
+    merged_config['processing'] = data_config.get('processing', {})
+    merged_config['feature_engineering'] = data_config.get('feature_engineering', {})
+    merged_config['paths'] = main_config.get('paths', {})
+    # Nếu cần merge thêm các key khác, bổ sung tại đây
 
     # Initialize processor
-    processor = VietnamDataProcessor(config)
+    processor = VietnamDataProcessor(merged_config)
 
     # Load data
     processor.load_sector_mapping()

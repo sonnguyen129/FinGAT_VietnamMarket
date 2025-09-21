@@ -1,0 +1,504 @@
+2025-09-21 12:22:16 | __main__ | INFO     | data_processor.py:96 | VietnamDataProcessor initialized with config: vietnam
+2025-09-21 12:22:16 | __main__ | ERROR    | data_processor.py:122 | Error loading sector mapping: [Errno 2] No such file or directory: 'data\\raw\\VN_HOSE_companies.csv'
+2025-09-21 12:22:16 | __main__ | INFO     | data_processor.py:160 | Successfully loaded data for 0 stocks
+2025-09-21 12:22:16 | __main__ | INFO     | data_processor.py:412 | Starting feature engineering for all stocks...
+2025-09-21 12:22:16 | __main__ | WARNING  | data_processor.py:38 | No trading dates found in stock data.
+2025-09-21 12:22:16 | __main__ | INFO     | data_processor.py:65 | All stocks synchronized to common trading calendar.
+2025-09-21 12:22:16 | __main__ | ERROR    | data_processor.py:459 | No data was successfully processed
+2025-09-21 12:26:13 | __main__ | INFO     | data_processor.py:96 | VietnamDataProcessor initialized with config: vietnam
+2025-09-21 12:26:14 | __main__ | INFO     | data_processor.py:118 | Loaded sector mapping for 1590 stocks
+2025-09-21 12:26:14 | __main__ | INFO     | data_processor.py:160 | Successfully loaded data for 0 stocks
+2025-09-21 12:26:14 | __main__ | INFO     | data_processor.py:412 | Starting feature engineering for all stocks...
+2025-09-21 12:26:14 | __main__ | WARNING  | data_processor.py:38 | No trading dates found in stock data.
+2025-09-21 12:26:14 | __main__ | INFO     | data_processor.py:65 | All stocks synchronized to common trading calendar.
+2025-09-21 12:26:14 | __main__ | ERROR    | data_processor.py:459 | No data was successfully processed
+2025-09-21 12:27:20 | __main__ | INFO     | data_processor.py:107 | VietnamDataProcessor initialized with config: vietnam
+2025-09-21 12:27:20 | __main__ | INFO     | data_processor.py:129 | Loaded sector mapping for 1590 stocks
+2025-09-21 12:27:20 | __main__ | INFO     | data_processor.py:171 | Successfully loaded data for 0 stocks
+2025-09-21 12:27:20 | __main__ | INFO     | data_processor.py:423 | Starting feature engineering for all stocks...
+2025-09-21 12:27:20 | __main__ | ERROR    | data_processor.py:35 | No stock data loaded. Please check your data loading step.
+2025-09-21 12:27:20 | __main__ | INFO     | data_processor.py:76 | All stocks synchronized to common trading calendar.
+2025-09-21 12:27:20 | __main__ | ERROR    | data_processor.py:470 | No data was successfully processed
+2025-09-21 12:28:53 | __main__ | INFO     | data_processor.py:107 | VietnamDataProcessor initialized with config: vietnam
+2025-09-21 12:28:53 | __main__ | INFO     | data_processor.py:129 | Loaded sector mapping for 1590 stocks
+2025-09-21 12:28:53 | __main__ | INFO     | data_processor.py:171 | Successfully loaded data for 0 stocks
+2025-09-21 12:28:53 | __main__ | INFO     | data_processor.py:423 | Starting feature engineering for all stocks...
+2025-09-21 12:28:53 | __main__ | ERROR    | data_processor.py:35 | No stock data loaded. Please check your data loading step.
+2025-09-21 12:28:53 | __main__ | INFO     | data_processor.py:76 | All stocks synchronized to common trading calendar.
+2025-09-21 12:28:53 | __main__ | ERROR    | data_processor.py:470 | No data was successfully processed
+2025-09-21 12:30:21 | __main__ | INFO     | data_processor.py:107 | VietnamDataProcessor initialized with config: vietnam
+2025-09-21 12:30:21 | __main__ | INFO     | data_processor.py:129 | Loaded sector mapping for 1590 stocks
+2025-09-21 12:30:21 | __main__ | INFO     | data_processor.py:175 | Successfully loaded data for 0 stocks
+2025-09-21 12:30:21 | __main__ | INFO     | data_processor.py:427 | Starting feature engineering for all stocks...
+2025-09-21 12:30:21 | __main__ | ERROR    | data_processor.py:35 | No stock data loaded. Please check your data loading step.
+2025-09-21 12:30:21 | __main__ | INFO     | data_processor.py:76 | All stocks synchronized to common trading calendar.
+2025-09-21 12:30:21 | __main__ | ERROR    | data_processor.py:474 | No data was successfully processed
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:107 | VietnamDataProcessor initialized with config: vietnam
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:129 | Loaded sector mapping for 1590 stocks
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:175 | Successfully loaded data for 1 stocks
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:427 | Starting feature engineering for all stocks...
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:56 | Common trading calendar has 1498 dates.
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:76 | All stocks synchronized to common trading calendar.
+2025-09-21 12:33:16 | __main__ | ERROR    | data_processor.py:341 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:465 | Feature engineering completed. Total shape: (1498, 50)
+2025-09-21 12:33:16 | __main__ | INFO     | data_processor.py:470 | Processed features saved to data\processed\processed_features.csv
+2025-09-21 13:03:10 | src.data.data_processor | INFO     | data_processor.py:142 | VietnamDataProcessor initialized with config: vietnam
+2025-09-21 13:03:10 | src.data.data_processor | INFO     | data_processor.py:164 | Loaded sector mapping for 1590 stocks
+2025-09-21 13:03:10 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for ABW: 152 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for BCB: 1 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for BDW: 203 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for BGW: 61 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for BHI: 57 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for BLW: 51 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for BNW: 8 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for CK8: 2 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for CMW: 219 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for CTW: 227 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for DCH: 16 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for DLM: 0 days (minimum: 252)
+2025-09-21 13:03:11 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for DMS: 96 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for DNN: 0 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for DTV: 210 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for DWC: 91 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for FRM: 234 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for GCB: 240 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for GLC: 5 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for GLW: 82 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for HGW: 201 days (minimum: 252)
+2025-09-21 13:03:12 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for HMG: 123 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for HRB: 126 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for KAC: 166 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for KHW: 49 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for KLM: 42 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for LAW: 66 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for LDW: 1 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for MGR: 236 days (minimum: 252)
+2025-09-21 13:03:13 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for NDW: 3 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for NLS: 91 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for NQB: 21 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for NQT: 9 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for NSL: 221 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for NVP: 3 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for PAI: 27 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for PBK: 33 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for PIS: 247 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for PMW: 204 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for PTH: 163 days (minimum: 252)
+2025-09-21 13:03:14 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for PTN: 165 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for PXC: 1 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for QNW: 26 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for SP2: 215 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for STW: 33 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for SVH: 15 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for TAW: 97 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for TBR: 226 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for THN: 1 days (minimum: 252)
+2025-09-21 13:03:15 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for THW: 244 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for TMW: 64 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for TOW: 203 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for TQN: 37 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for TQW: 0 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for TTS: 209 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for UPC: 234 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for V11: 232 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for VBG: 4 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for VLW: 184 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for VPW: 3 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for VXT: 126 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | WARNING  | data_processor.py:282 | Insufficient data for XDH: 117 days (minimum: 252)
+2025-09-21 13:03:16 | src.data.data_processor | INFO     | data_processor.py:210 | Successfully loaded data for 391 stocks
+2025-09-21 13:03:16 | src.data.data_processor | INFO     | data_processor.py:462 | Starting feature engineering for all stocks...
+2025-09-21 13:03:17 | src.data.data_processor | ERROR    | data_processor.py:88 | No common trading dates found across stocks. Check for inconsistent or missing dates.
+2025-09-21 13:03:18 | src.data.data_processor | INFO     | data_processor.py:111 | All stocks synchronized to common trading calendar.
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:18 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:19 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:20 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:21 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:22 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:23 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:24 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:25 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:26 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:27 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:28 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:29 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:30 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:31 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:32 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:33 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:34 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:34 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:34 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:34 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:34 | src.data.data_processor | ERROR    | data_processor.py:376 | Error calculating technical indicators: module 'ta.volume' has no attribute 'volume_sma'
+2025-09-21 13:03:34 | src.data.data_processor | INFO     | data_processor.py:500 | Feature engineering completed. Total shape: (0, 50)
