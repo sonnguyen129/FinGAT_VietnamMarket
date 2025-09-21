@@ -1,0 +1,59 @@
+# Core Deep Learning Frameworks
+torch>=1.12.0,<2.0.0
+torch-geometric>=2.0.0
+torchmetrics>=0.9.0
+
+# Scientific Computing & Data Processing  
+numpy>=1.21.0,<1.25.0
+pandas>=1.4.0,<2.0.0
+scipy>=1.8.0
+scikit-learn>=1.1.0
+
+# Financial Data & Time Series
+yfinance>=0.1.87
+pandas-datareader>=0.10.0
+ta-lib>=0.4.24
+quantlib>=1.27
+arch>=5.3.0
+
+# Visualization & Plotting
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.10.0
+bokeh>=2.4.0
+
+# Configuration & Experiment Management
+pyyaml>=6.0
+hydra-core>=1.2.0
+omegaconf>=2.2.0
+wandb>=0.13.0
+mlflow>=1.28.0
+
+# Utilities & Performance
+tqdm>=4.64.0
+joblib>=1.1.0
+numba>=0.56.0
+psutil>=5.9.0
+
+# Development & Testing
+pytest>=7.1.0
+pytest-cov>=3.0.0
+black>=22.6.0
+flake8>=5.0.0
+isort>=5.10.0
+pre-commit>=2.20.0
+
+# Jupyter & Notebooks
+jupyterlab>=3.4.0
+ipywidgets>=7.7.0
+notebook>=6.4.0
+
+# Documentation
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
+
+# Additional ML/Financial Libraries
+xgboost>=1.6.0
+lightgbm>=3.3.0
+catboost>=1.0.6
+statsmodels>=0.13.0

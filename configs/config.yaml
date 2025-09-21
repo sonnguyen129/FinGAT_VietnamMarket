@@ -1,0 +1,146 @@
+# FinGAT Vietnam Market Configuration
+# Main configuration file for FinGAT model training and evaluation
+
+# Model Configuration
+model:
+  name: "FinGAT"
+  # Temporal component (AttentiveGRU)
+  temporal:
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.2
+    attention_size: 64
+
+  # Graph component (GAT layers)
+  graph:
+    # Intra-sector GAT
+    intra_sector:
+      hidden_size: 128
+      num_heads: 8
+      dropout: 0.3
+      alpha: 0.2  # LeakyReLU negative slope
+
+    # Inter-sector GAT  
+    inter_sector:
+      hidden_size: 128
+      num_heads: 8
+      dropout: 0.3
+      alpha: 0.2
+
+  # Output layers
+  output:
+    hidden_size: 64
+    num_classes: 2  # up/down movement prediction
+    dropout: 0.5
+
+# Training Configuration
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  num_epochs: 100
+  early_stopping:
+    patience: 15
+    min_delta: 0.001
+
+  # Loss function weights
+  loss:
+    ranking_weight: 0.7
+    movement_weight: 0.3
+    margin: 1.0  # Pairwise ranking loss margin
+
+# Data Configuration  
+data:
+  # Vietnam market specific settings
+  market: "vietnam"
+  exchange: "HOSE"
+
+  # Temporal settings
+  sequence_length: 30  # 30-day sequences
+  prediction_horizon: 1  # 1-day ahead prediction
+
+  # Data split
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+  # Features
+  technical_indicators:
+    - "SMA_5"
+    - "SMA_10" 
+    - "SMA_20"
+    - "EMA_12"
+    - "EMA_26"
+    - "RSI_14"
+    - "MACD"
+    - "MACD_signal"
+    - "MACD_hist"
+    - "BB_upper"
+    - "BB_middle"
+    - "BB_lower"
+    - "volume_sma"
+    - "price_volume_trend"
+
+  raw_features:
+    - "open"
+    - "high" 
+    - "low"
+    - "close"
+    - "volume"
+    - "return_1d"
+    - "return_5d"
+    - "return_10d"
+    - "volatility_10d"
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision" 
+    - "recall"
+    - "f1_score"
+    - "mrr@5"
+    - "mrr@10"
+    - "precision@5" 
+    - "precision@10"
+
+  # Top-K evaluation settings
+  top_k_values: [5, 10, 20, 30]
+
+# Experiment Tracking
+experiment:
+  name: "fingat_vietnam_baseline"
+  tags: ["fingat", "vietnam", "gat", "financial"]
+  log_interval: 10
+  save_interval: 25
+
+  # Weights & Biases
+  wandb:
+    project: "fingat-vietnam"
+    entity: null  # Set your wandb entity
+
+  # MLFlow
+  mlflow:
+    experiment_name: "FinGAT_Vietnam"
+    tracking_uri: null  # Set your MLFlow tracking server
+
+# Hardware Configuration
+device:
+  use_cuda: true
+  gpu_id: 0
+  num_workers: 4
+  pin_memory: true
+
+# Reproducibility
+seed: 42
+deterministic: true
+
+# Paths (relative to project root)
+paths:
+  data_root: "data"
+  raw_data: "data/raw"
+  processed_data: "data/processed" 
+  models: "outputs/models"
+  logs: "outputs/logs"
+  figures: "outputs/figures"
+  predictions: "outputs/predictions"

@@ -1,0 +1,68 @@
+# Hyperparameter Search Configuration for FinGAT Vietnam
+
+# Grid Search Parameters
+hyperparameter_search:
+  method: "grid"  # Options: grid, random, bayesian
+
+  # Model hyperparameters to search
+  model:
+    temporal:
+      hidden_size: [64, 128, 256]
+      num_layers: [1, 2, 3]
+      dropout: [0.1, 0.2, 0.3]
+      attention_size: [32, 64, 128]
+
+    graph:
+      intra_sector:
+        hidden_size: [64, 128, 256]
+        num_heads: [4, 8, 16]
+        dropout: [0.2, 0.3, 0.4]
+        alpha: [0.1, 0.2, 0.3]
+
+      inter_sector:
+        hidden_size: [64, 128, 256] 
+        num_heads: [4, 8, 16]
+        dropout: [0.2, 0.3, 0.4]
+        alpha: [0.1, 0.2, 0.3]
+
+    output:
+      hidden_size: [32, 64, 128]
+      dropout: [0.3, 0.5, 0.7]
+
+  # Training hyperparameters
+  training:
+    batch_size: [16, 32, 64]
+    learning_rate: [0.0001, 0.001, 0.01]
+    weight_decay: [0.0001, 0.001, 0.01]
+
+    loss:
+      ranking_weight: [0.5, 0.7, 0.8]
+      movement_weight: [0.2, 0.3, 0.5]
+      margin: [0.5, 1.0, 2.0]
+
+  # Data hyperparameters
+  data:
+    sequence_length: [20, 30, 45, 60]
+
+# Random Search Settings (if method = "random")
+random_search:
+  n_trials: 100
+
+# Bayesian Optimization Settings (if method = "bayesian") 
+bayesian_search:
+  n_trials: 50
+  acquisition_function: "EI"  # Expected Improvement
+
+# Evaluation metric for hyperparameter optimization
+optimization_metric: "mrr@10"
+optimization_direction: "maximize"  # maximize or minimize
+
+# Cross-validation settings for hyperparameter search
+cross_validation:
+  n_folds: 5
+  shuffle: true
+
+# Early stopping for hyperparameter search
+early_stopping:
+  patience: 10
+  min_delta: 0.001

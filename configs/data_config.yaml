@@ -1,0 +1,147 @@
+# Data Configuration for Vietnam Stock Market
+
+# Market Information
+market_info:
+  country: "Vietnam"
+  exchange: "HOSE"  # Ho Chi Minh Stock Exchange
+  currency: "VND"
+  timezone: "Asia/Ho_Chi_Minh"
+
+  # Trading schedule
+  trading_days:
+    - "Monday"
+    - "Tuesday" 
+    - "Wednesday"
+    - "Thursday"
+    - "Friday"
+
+  trading_hours:
+    morning_session: "09:00-11:30"
+    afternoon_session: "13:00-15:00"
+
+# Data Sources and Paths
+data_sources:
+  # Raw CSV files (expected format)
+  stock_files:
+    path: "data/raw/stocks/"
+    pattern: "*.csv"
+    encoding: "utf-8"
+
+  # Sector mapping
+  sector_mapping:
+    file: "data/raw/VN_HOSE_companies.csv"
+    stock_column: "Symbol"
+    sector_column: "Sector"
+
+# Data Processing Parameters
+processing:
+  # Date handling
+  date_column: "Date"
+  date_format: "%Y-%m-%d"
+
+  # Required columns in stock files
+  required_columns:
+    - "Date"
+    - "Open"
+    - "High" 
+    - "Low"
+    - "Close"
+    - "Volume"
+
+  # Column mapping (if different names in raw data)
+  column_mapping:
+    "Ngày": "Date"
+    "Giá mở cửa": "Open"
+    "Giá cao nhất": "High"
+    "Giá thấp nhất": "Low"
+    "Giá đóng cửa": "Close"
+    "Khối lượng": "Volume"
+
+  # Data cleaning
+  cleaning:
+    remove_zero_volume: true
+    remove_zero_price: true
+    fill_missing_method: "forward"  # forward, backward, interpolate
+    outlier_detection: true
+    outlier_threshold: 3  # Standard deviations
+
+  # Minimum data requirements
+  min_trading_days: 252  # At least 1 year of data
+  min_daily_volume: 1000  # Minimum daily volume
+
+# Feature Engineering
+feature_engineering:
+  # Technical indicators parameters
+  technical_indicators:
+    sma_periods: [5, 10, 20, 50]
+    ema_periods: [12, 26]
+    rsi_period: 14
+    macd:
+      fast_period: 12
+      slow_period: 26
+      signal_period: 9
+    bollinger_bands:
+      period: 20
+      std_multiplier: 2
+    volume_sma_period: 20
+
+  # Return calculations
+  returns:
+    periods: [1, 5, 10, 20]
+
+  # Volatility calculations  
+  volatility:
+    periods: [10, 20, 30]
+    method: "std"  # std, parkinson, garman_klass
+
+  # Normalization
+  normalization:
+    method: "z_score"  # z_score, min_max, robust
+    rolling_window: 252  # 1 year rolling normalization
+
+# Graph Construction
+graph_construction:
+  # Sector-based connections
+  intra_sector:
+    method: "complete"  # complete, threshold, knn
+    threshold: 0.7  # Correlation threshold if method = "threshold"
+    k: 5  # Number of neighbors if method = "knn"
+
+  # Inter-sector connections
+  inter_sector:
+    method: "correlation"  # correlation, market_cap, volume
+    threshold: 0.5
+    max_connections: 10  # Maximum connections per sector
+
+  # Edge weights
+  edge_weights:
+    method: "correlation"  # correlation, distance, learned
+    min_weight: 0.1
+    max_weight: 1.0
+
+# Data Validation
+validation:
+  # Data quality checks
+  checks:
+    - "missing_values"
+    - "duplicate_dates"
+    - "price_consistency"  # High >= Low, Close between High/Low
+    - "volume_positive"
+    - "return_outliers"
+
+  # Sector mapping validation
+  sector_validation:
+    min_stocks_per_sector: 3
+    check_missing_sectors: true
+
+# Vietnam-specific Holidays (dates to exclude)
+holidays:
+  - "2023-01-01"  # New Year
+  - "2023-01-21"  # Tet Holiday (example dates)
+  - "2023-01-22"
+  - "2023-01-23"
+  - "2023-01-24"
+  - "2023-01-25"
+  - "2023-04-30"  # Liberation Day
+  - "2023-05-01"  # Labor Day
+  - "2023-09-02"  # Independence Day
