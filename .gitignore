@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+
+# Data
+datasets/VN_datasets/
+datasets/processed/
+*.csv
+*.pkl
+*.h5
+*.npy
+*.npz
+
+# Model checkpoints
+checkpoints/
+models/
+*.pth
+*.pt
+*.ckpt
+
+# Logs
+logs/
+*.log
+runs/
+wandb/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentation
+docs/_build/
