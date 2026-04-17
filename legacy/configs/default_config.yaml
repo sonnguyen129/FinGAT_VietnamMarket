@@ -1,0 +1,84 @@
+# Default configuration for FinGAT training on Vietnamese stock market
+# Based on paper recommendations
+
+# Data settings
+data:
+  data_path: 'datasets/VN_datasets/'
+  companies_file: 'datasets/VN_Companies.csv'
+  processed_path: 'datasets/processed/'
+  start_date: '2020-01-01'
+  end_date: '2023-12-31'
+  min_history_days: 250
+  window_size: 15  # 15 days input (3 weeks)
+  num_weeks: 3     # Number of weeks for model
+  train_ratio: 0.6
+  val_ratio: 0.2
+  test_ratio: 0.2
+  num_stocks: 100  # Number of stocks to load (can be limited for testing)
+
+# Model settings (from paper)
+model:
+  # input_dim: auto-detected from feature engineering
+  # num_sectors: auto-detected from stock-sector mapping
+  time_steps: 5      # Days per week (window_size / num_weeks)
+  hidden_dim: 16     # Paper recommends 16
+  num_weeks: 3       # Number of weeks to process
+  dropout: 0.2
+  num_heads: 1       # GAT heads
+
+# Training settings (from paper analysis)
+training:
+  # Basic settings
+  epochs: 100
+  batch_size: 128    # Paper uses 128
+  learning_rate: 0.001  # Paper tests {0.0005, 0.001, 0.005}
+  weight_decay: 1e-4    # L2 regularization λ
+  
+  # Loss weights (paper: δ=0.01)
+  ranking_weight: 0.99   # (1-δ)
+  movement_weight: 0.01  # δ
+  l2_lambda: 1e-4       # λ
+  
+  # Optimization
+  optimizer: 'adam'
+  scheduler: 'step'
+  scheduler_step_size: 30
+  scheduler_gamma: 0.1
+  gradient_clip: 1.0
+  
+  # Early stopping
+  early_stopping: true
+  patience: 15
+  min_delta: 0.0001
+  
+  # Checkpointing
+  save_every_epoch: true
+  checkpoint_dir: 'checkpoints/'
+  best_model_metric: 'val_MRR@10'  # Metric to monitor for best model
+  
+  # Logging
+  log_every_n_steps: 10
+  val_every_n_epochs: 1
+  metrics_file: 'metrics.csv'
+
+# Evaluation settings
+evaluation:
+  top_k: [5, 10, 20]  # K values for MRR@K and Precision@K
+  calculate_sharpe: false  # Calculate Sharpe ratio
+  calculate_drawdown: false  # Calculate maximum drawdown
+
+# System settings
+system:
+  device: 'cpu'  # Will be set to cuda if available
+  num_workers: 4
+  seed: 42
+  deterministic: true
+
+# Experiment tracking
+experiment:
+  name: 'fingat_vn_default'
+  description: 'Default FinGAT training on Vietnamese market'
+  tags: ['default', 'vietnamese', 'fingat']
+  track_wandb: false  # Set to true to use Weights & Biases
+  wandb_project: 'fingat-vn'
+  wandb_entity: null

@@ -1,0 +1,1 @@
+# FinGAT package initialization

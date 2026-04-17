@@ -1,0 +1,1098 @@
+{
+  "ACB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "AGG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "AGR": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "APG": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "ASP": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Phân phối xăng dầu & khí đốt",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "BCG": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Tài chính đặc biệt",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "BIC": {
+    "icb_code2": 8500,
+    "icb_name2": "Bảo hiểm",
+    "icb_name3": "Bảo hiểm phi nhân thọ",
+    "icb_name4": "Bảo hiểm phi nhân thọ",
+    "industry": "Insurance",
+    "sector_idx": 3
+  },
+  "BID": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "BMC": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Khai khoáng",
+    "icb_name4": "Khai khoáng",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "BMI": {
+    "icb_code2": 8500,
+    "icb_name2": "Bảo hiểm",
+    "icb_name3": "Bảo hiểm phi nhân thọ",
+    "icb_name4": "Bảo hiểm phi nhân thọ",
+    "industry": "Insurance",
+    "sector_idx": 3
+  },
+  "BSI": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "BTP": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "BVH": {
+    "icb_code2": 8500,
+    "icb_name2": "Bảo hiểm",
+    "icb_name3": "Bảo hiểm nhân thọ",
+    "icb_name4": "Bảo hiểm nhân thọ",
+    "industry": "Insurance",
+    "sector_idx": 3
+  },
+  "BWE": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Nước",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "CCL": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "CHP": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "CKG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "CNG": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Phân phối xăng dầu & khí đốt",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "CRE": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "CTG": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "CTS": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "D2D": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "DHC": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Lâm nghiệp và Giấy",
+    "icb_name4": "Sản xuất giấy",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "DHM": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Khai khoáng",
+    "icb_name4": "Khai khoáng",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "DIG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "DLG": {
+    "icb_code2": 2300,
+    "icb_name2": "Xây dựng và Vật liệu",
+    "icb_name3": "Xây dựng và Vật liệu",
+    "icb_name4": "Xây dựng",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "DRH": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "DSC": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "DTA": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "DXG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "EIB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "FIR": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "FIT": {
+    "icb_code2": 4500,
+    "icb_name2": "Y tế",
+    "icb_name3": "Dược phẩm",
+    "icb_name4": "Dược phẩm",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "FPT": {
+    "icb_code2": 9500,
+    "icb_name2": "Công nghệ Thông tin",
+    "icb_name3": "Phần mềm & Dịch vụ Máy tính",
+    "icb_name4": "Phần mềm",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "FTS": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "GAS": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Phân phối xăng dầu & khí đốt",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "GEG": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "GHC": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "HAP": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Lâm nghiệp và Giấy",
+    "icb_name4": "Sản xuất giấy",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "HAR": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "HCM": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "HDB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "HDC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "HDG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "HMC": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "HPG": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "HPX": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "HQC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "HSG": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "HTN": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "IJC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "ITC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "KBC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "KDH": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "KHP": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "KLB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "KOS": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "KSB": {
+    "icb_code2": 2300,
+    "icb_name2": "Xây dựng và Vật liệu",
+    "icb_name3": "Xây dựng và Vật liệu",
+    "icb_name4": "Vật liệu xây dựng & Nội thất",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "LDG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "LGL": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "LHG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "MBB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "MIG": {
+    "icb_code2": 8500,
+    "icb_name2": "Bảo hiểm",
+    "icb_name3": "Bảo hiểm phi nhân thọ",
+    "icb_name4": "Bảo hiểm phi nhân thọ",
+    "industry": "Insurance",
+    "sector_idx": 3
+  },
+  "MSN": {
+    "icb_code2": 3500,
+    "icb_name2": "Thực phẩm và đồ uống",
+    "icb_name3": "Sản xuất thực phẩm",
+    "icb_name4": "Thực phẩm",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "MWG": {
+    "icb_code2": 5300,
+    "icb_name2": "Bán lẻ",
+    "icb_name3": "Bán lẻ",
+    "icb_name4": "Phân phối hàng chuyên dụng",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "NAB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "NBB": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "NKG": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "NLG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "NT2": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "NTC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "NTL": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "NVL": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "NVT": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "OGC": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Tài chính đặc biệt",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "ORS": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "PDR": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "PGC": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Phân phối xăng dầu & khí đốt",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "PGD": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Phân phối xăng dầu & khí đốt",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "PGI": {
+    "icb_code2": 8500,
+    "icb_name2": "Bảo hiểm",
+    "icb_name3": "Bảo hiểm phi nhân thọ",
+    "icb_name4": "Bảo hiểm phi nhân thọ",
+    "industry": "Insurance",
+    "sector_idx": 3
+  },
+  "PLX": {
+    "icb_code2": 500,
+    "icb_name2": "Dầu khí",
+    "icb_name3": "Sản xuất Dầu khí",
+    "icb_name4": "Sản xuất và Khai thác dầu khí",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "POW": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "PPC": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "PTB": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Lâm nghiệp và Giấy",
+    "icb_name4": "Lâm sản và Chế biến gỗ",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "PTL": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "QCG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "SAB": {
+    "icb_code2": 3500,
+    "icb_name2": "Thực phẩm và đồ uống",
+    "icb_name3": "Bia và đồ uống",
+    "icb_name4": "Sản xuất bia",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "SAV": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Lâm nghiệp và Giấy",
+    "icb_name4": "Lâm sản và Chế biến gỗ",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "SBA": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "SCR": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "SGR": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "SHA": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "SHB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "SHI": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "SHP": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "SIP": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "SJD": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "SJS": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "SMC": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "SSI": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "STB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "SVT": {
+    "icb_code2": 5300,
+    "icb_name2": "Bán lẻ",
+    "icb_name3": "Bán lẻ",
+    "icb_name4": "Dịch vụ tiêu dùng chuyên ngành",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "SZC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "SZL": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "TCB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "TCH": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "TCI": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "TDC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Tư Vấn, Định giá, Môi giới Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "TDG": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Phân phối xăng dầu & khí đốt",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "TDH": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "TDM": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Nước & Khí đốt",
+    "icb_name4": "Nước",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "TEG": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "TIP": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "TLD": {
+    "icb_code2": 2300,
+    "icb_name2": "Xây dựng và Vật liệu",
+    "icb_name3": "Xây dựng và Vật liệu",
+    "icb_name4": "Vật liệu xây dựng & Nội thất",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "TLH": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "TNI": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Kim loại",
+    "icb_name4": "Thép và sản phẩm thép",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "TPB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "TTA": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "TTF": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Lâm nghiệp và Giấy",
+    "icb_name4": "Lâm sản và Chế biến gỗ",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "TVB": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "TVS": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "VCB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "VCI": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "VDS": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "VHM": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "VIC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "VID": {
+    "icb_code2": 1700,
+    "icb_name2": "Tài nguyên Cơ bản",
+    "icb_name3": "Lâm nghiệp và Giấy",
+    "icb_name4": "Sản xuất giấy",
+    "industry": "Basic Resources",
+    "sector_idx": 1
+  },
+  "VJC": {
+    "icb_code2": 5700,
+    "icb_name2": "Du lịch và Giải trí",
+    "icb_name3": "Du lịch & Giải trí",
+    "icb_name4": "Hàng không",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "VND": {
+    "icb_code2": 8700,
+    "icb_name2": "Dịch vụ tài chính",
+    "icb_name3": "Dịch vụ tài chính",
+    "icb_name4": "Môi giới chứng khoán",
+    "industry": "Financial Services",
+    "sector_idx": 2
+  },
+  "VNM": {
+    "icb_code2": 3500,
+    "icb_name2": "Thực phẩm và đồ uống",
+    "icb_name3": "Sản xuất thực phẩm",
+    "icb_name4": "Thực phẩm",
+    "industry": "Other",
+    "sector_idx": 4
+  },
+  "VPB": {
+    "icb_code2": 8300,
+    "icb_name2": "Ngân hàng",
+    "icb_name3": "Ngân hàng",
+    "icb_name4": "Ngân hàng",
+    "industry": "Banks",
+    "sector_idx": 0
+  },
+  "VPD": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  },
+  "VPH": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "VPI": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "VRC": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "VRE": {
+    "icb_code2": 8600,
+    "icb_name2": "Bất động sản",
+    "icb_name3": "Bất động sản",
+    "icb_name4": "Bất động sản",
+    "industry": "Real Estate",
+    "sector_idx": 5
+  },
+  "VSH": {
+    "icb_code2": 7500,
+    "icb_name2": "Điện, nước & xăng dầu khí đốt",
+    "icb_name3": "Sản xuất & Phân phối Điện",
+    "icb_name4": "Sản xuất & Phân phối Điện",
+    "industry": "Utilities",
+    "sector_idx": 6
+  }
+}

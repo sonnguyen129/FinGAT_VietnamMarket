@@ -1,233 +1,312 @@
+"""Training loop for FinGAT and baseline models."""
+
 import copy
-import json
-import os
-import pickle
 
-import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import torch
-import torch.nn as nn
-import torch.utils.data as Data
-from sklearn.metrics import mean_absolute_error
 from torch import optim
+from tqdm import tqdm
 
-from model.graph_pool import CategoricalGraph, CategoricalGraphAtt, CategoricalGraphPool
-from parse_arg import parse_basic_args
-
-# load data 
-args = parse_basic_args()
-print(args)
-data_path = args.data
-with open(data_path,"rb") as f:
-    data = pickle.load(f)
-inner_edge = np.array(np.load("./Taiwan_inner_edge.npy"))
-inner10_edge = np.array(np.load("./edge_10.npy"))
-inner20_edge = np.array(np.load("./Taiwan_inner_edge20.npy"))
-outer_edge = np.array(np.load("./Taiwan_outer_edge.npy"))
-time_step = data["train"]["x1"].shape[-2]
-input_dim = data["train"]["x1"].shape[-1]
-num_weeks = data["train"]["x1"].shape[0]
-train_size = int(num_weeks*0.2)
-device = args.device
-agg_week_num = args.week_num
-
-# convert data into torch dtype
-train_w1 = torch.Tensor(data["train"]["x1"]).float().to(device)
-train_w2 = torch.Tensor(data["train"]["x2"]).float().to(device)
-train_w3 = torch.Tensor(data["train"]["x3"]).float().to(device)
-train_w4 = torch.Tensor(data["train"]["x4"]).float().to(device)
-inner_edge = torch.tensor(inner_edge.T,dtype=torch.int64).to(device)
-inner10_edge = torch.tensor(inner10_edge.T,dtype=torch.int64).to(device)
-inner20_edge = torch.tensor(inner20_edge.T,dtype=torch.int64).to(device)
-outer_edge = torch.tensor(outer_edge.T,dtype=torch.int64).to(device)
-
-# test data 
-test_w1 = torch.Tensor(data["test"]["x1"]).float().to(device)
-test_w2 = torch.Tensor(data["test"]["x2"]).float().to(device)
-test_w3 = torch.Tensor(data["test"]["x3"]).float().to(device)
-test_w4 = torch.Tensor(data["test"]["x4"]).float().to(device)
-test_data = [test_w1,test_w2,test_w3,test_w4]#[-agg_week_num:]
-
-# label data
-train_reg = torch.Tensor(data["train"]["y_return ratio"]).float()
-train_cls = torch.Tensor(data["train"]["y_up_or_down"]).float()
-test_y = data["test"]["y_return ratio"] 
-test_cls = data["test"]["y_up_or_down"] 
-test_shape = test_y.shape[0]
-loop_number = 100 if args.model == "CAT" else 10
-ks_list = [5,10,20]
-# use torch loader
-# train_dataset = Data.TensorDataset(train_w1,train_w2,train_w3,train_w4,train_reg,train_cls)
-# train_loader = Data.DataLoader(
-#     dataset=train_dataset,     
-#     batch_size=128,      
-#     shuffle=True,               
-# )
-
-# check data shape
-# print("Training shape:",train_x.shape,train_y.shape)
-# print("Testing shape:",test_x.shape,test_y.shape)
-
-def train(args):
-    global test_y
-    model_name = args.model
-    l2 = args.l2
-    lr = args.lr
-    beta = args.beta
-    gamma = args.gamma 
-    alpha = args.alpha
-    device = args.device
-    epochs = args.epochs
-    hidden_dim = args.dim 
-    use_gru = args.use_gru
-    
-    if model_name == "CG":
-        model = CategoricalGraph(input_dim,time_step,hidden_dim,inner10_edge,outer_edge,agg_week_num,device).to(device)
-    elif model_name == "CAT":
-        model = CategoricalGraphAtt(input_dim,time_step,hidden_dim,inner_edge,outer_edge,agg_week_num,use_gru,device).to(device)
-    elif model_name == "CPool":
-        model = CategoricalGraphPool(input_dim,time_step,hidden_dim,inner_edge,inner20_edge,outer_edge,agg_week_num,use_gru,device).to(device)
-
-    # initialize parameters
-    for p in model.parameters():
-        if p.dim() > 1:
-            nn.init.xavier_uniform_(p)
-    pytorch_total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    print("Number of parameters:%s" % pytorch_total_params)
-
-    # optimizer & loss 
-    optimizer = optim.Adam(model.parameters(), weight_decay=l2,lr=lr)
-    reg_loss_func = nn.L1Loss(reduction='none')
-    cls_loss_func = nn.BCELoss(reduction='none')
-
-    # save best model
-    best_metric_IRR = None
-    best_metric_MRR = None
-    best_results_IRR = None
-    best_results_MRR = None
-    global_best_IRR = 999
-    global_best_MRR = 0
-
-    r_loss = torch.tensor([]).float().to(device)
-    c_loss = torch.tensor([]).float().to(device)
-    ra_loss = torch.tensor([]).float().to(device)
-    for epoch in range(epochs):
-        for week in range(num_weeks):
-            model.train() # prep to train model
-            batch_x1,batch_x2,batch_x3,batch_x4 = train_w1[week].to(device), \
-                                                train_w2[week].to(device),\
-                                                train_w3[week].to(device),\
-                                                train_w4[week].to(device)
-            batch_weekly = [batch_x1,batch_x2,batch_x3,batch_x4][-agg_week_num:]
-            batch_reg_y = train_reg[week].view(-1,1).to(device)
-            batch_cls_y = train_cls[week].view(-1,1).to(device)
-            reg_out, cls_out = model(batch_weekly)
-            reg_out, cls_out = reg_out.view(-1,1), cls_out.view(-1,1)
-
-            # calculate loss
-            reg_loss = reg_loss_func(reg_out,batch_reg_y) # (target_size, 1) 
-            cls_loss = cls_loss_func(cls_out,batch_cls_y)
-            rank_loss = torch.relu(-(reg_out.view(-1,1)*reg_out.view(1,-1)) * (batch_reg_y.view(-1,1)*batch_reg_y.view(1,-1)))
-            c_loss = torch.cat((c_loss,cls_loss.view(-1,1)))
-            r_loss = torch.cat((r_loss,reg_loss.view(-1,1)))
-            ra_loss = torch.cat((ra_loss,rank_loss.view(-1,1)))
-
-            if (week+1) % 1 ==0:
-                cls_loss = beta*torch.mean(c_loss)
-                reg_loss = alpha*torch.mean(r_loss)
-                rank_loss = gamma*torch.sum(ra_loss)
-                loss = reg_loss + rank_loss + cls_loss
-                optimizer.zero_grad()
-                loss.backward()
-                optimizer.step()
-                r_loss = torch.tensor([]).float().to(device)
-                c_loss = torch.tensor([]).float().to(device)
-                ra_loss = torch.tensor([]).float().to(device)
-                if (week+1) % 144 ==0:  
-                    print("REG Loss:%.4f CLS Loss:%.4f RANK Loss:%.4f  Loss:%.4f"% (reg_loss.item(),cls_loss.item(),rank_loss.item(),loss.item()))
-        
-        # evaluate 
-        model.eval()
-        print("Evaluate at epoch %s"%(epoch+1))
-        y_pred, y_pred_cls = model.predict_toprank([test_w1,test_w2,test_w3,test_w4],device,top_k=5)
-
-        # calculate metric 
-        y_pred = np.array(y_pred).ravel()
-        test_y = np.array(test_y).ravel()
-        mae = round(mean_absolute_error(test_y, y_pred),4)
-        acc_score = Acc(test_cls,y_pred)
-
-        results = []
-        for k in ks_list:
-            IRRs , MRRs ,Prs =[],[],[]
-            for i in range(test_shape):
-                M = MRR(np.array(test_y[loop_number*i:loop_number*(i+1)]),np.array(y_pred[loop_number*i:loop_number*(i+1)]),k=k)
-                MRRs.append(M)
-                P = Precision(np.array(test_y[loop_number*i:loop_number*(i+1)]),np.array(y_pred[loop_number*i:loop_number*(i+1)]),k=k)
-                Prs.append(P)
-            over_all = [mae,round(acc_score,4),round(np.mean(MRRs),4),round(np.mean(Prs),4)]
-            results.append(over_all)
-        print(results)
-
-        # print('MAE:',round(mae,4),' IRR:',round(np.mean(IRRs),4),' MRR:',round(np.mean(MRRs),4)," Precision:",round(np.mean(Prs),4))
-        performance = [round(mae,4),round(acc_score,4),round(np.mean(MRRs),4),round(np.mean(Prs),4)]
-        
-        # print(performance)
-
-        # save best 
-        if np.mean(MRRs) > global_best_MRR:
-            global_best_MRR = np.mean(MRRs)
-            best_metric_MRR = performance
-            best_results_MRR =  results
-    
-    return best_metric_IRR, best_metric_MRR, best_results_IRR, best_results_MRR
+from config import Config
+from evaluate import evaluate_model, mrr_at_k
+from utils import set_seed, init_weights
 
 
-def MRR(test_y,pred_y,k=5):
-    predict = pd.DataFrame([])
-    predict["pred_y"] = pred_y
-    predict["y"] = test_y
-    
-    predict = predict.sort_values("pred_y",ascending = False ).reset_index(drop=True)
-    predict["pred_y_rank_index"] = (predict.index)+1
-    predict = predict.sort_values("y",ascending = False )
+def train_model(model, data: dict, config: Config,
+                criterion, name: str = "model",
+                verbose: bool = True) -> dict:
+    """Train a model and return best test results.
 
-    return sum(1/predict["pred_y_rank_index"][:k])
+    Args:
+        model: model with forward(weekly_inputs) -> (reg_out, cls_out)
+        data: splits dict {train/val/test: {x1, x2, x3, y_return_ratio, y_up_or_down}}
+        config: Config object
+        criterion: loss function with forward(reg_out, cls_out, y_return, y_binary)
+        name: model name for logging
+        verbose: print progress
+
+    Returns:
+        dict with best_val_mrr, test_results, training_history
+    """
+    model = model.to(config.device)
+    init_weights(model)
+
+    optimizer = optim.Adam(
+        model.parameters(), lr=config.lr, weight_decay=config.weight_decay)
+
+    best_val_mrr = -1
+    best_model_state = None
+    history = []
+    patience = 10
+    patience_counter = 0
+
+    num_train = data['train']['x1'].shape[0]
+    week_num = config.week_num
+
+    for epoch in range(config.epochs):
+        model.train()
+        epoch_loss = 0.0
+        epoch_reg = 0.0
+        epoch_cls = 0.0
+        epoch_rank = 0.0
+
+        indices = list(range(num_train))
+        for t in indices:
+            weekly = [
+                torch.tensor(data['train'][f'x{w + 1}'][t],
+                             dtype=torch.float32).to(config.device)
+                for w in range(week_num)
+            ]
+            y_ret = torch.tensor(
+                data['train']['y_return_ratio'][t],
+                dtype=torch.float32).to(config.device)
+            y_bin = torch.tensor(
+                data['train']['y_up_or_down'][t],
+                dtype=torch.float32).to(config.device)
+
+            reg_out, cls_out = model(weekly)
+            loss, reg_l, cls_l, rank_l = criterion(reg_out, cls_out, y_ret, y_bin)
+
+            optimizer.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            optimizer.step()
+
+            epoch_loss += loss.item()
+            epoch_reg += reg_l
+            epoch_cls += cls_l
+            epoch_rank += rank_l
+
+        avg_loss = epoch_loss / num_train
+
+        # Validate
+        val_results = evaluate_model(model, data, config, split='val')
+        val_mrr = val_results['MRR@5']
+
+        history.append({
+            'epoch': epoch + 1,
+            'train_loss': avg_loss,
+            'val_mrr5': val_mrr,
+        })
+
+        if val_mrr > best_val_mrr:
+            best_val_mrr = val_mrr
+            best_model_state = copy.deepcopy(model.state_dict())
+            patience_counter = 0
+        else:
+            patience_counter += 1
+
+        if verbose and (epoch + 1) % 5 == 0:
+            print(f"  [{name}] Epoch {epoch+1}/{config.epochs} "
+                  f"loss={avg_loss:.4f} val_MRR@5={val_mrr:.4f}")
+
+        if patience_counter >= patience:
+            if verbose:
+                print(f"  [{name}] Early stopping at epoch {epoch+1}")
+            break
+
+    # Load best model and evaluate on test set
+    if best_model_state is not None:
+        model.load_state_dict(best_model_state)
+    test_results = evaluate_model(model, data, config, split='test')
+
+    if verbose:
+        print(f"  [{name}] Best val MRR@5={best_val_mrr:.4f} | "
+              f"Test: MRR@5={test_results['MRR@5']:.4f} "
+              f"ACC={test_results['ACC']:.4f}")
+
+    return {
+        'best_val_mrr': best_val_mrr,
+        'test_results': test_results,
+        'history': history,
+        'model_state': best_model_state,
+    }
 
 
-def Precision(test_y,pred_y,k=5):
-    predict = pd.DataFrame([])
-    predict["pred_y"] = pred_y
-    predict["y"] = test_y
-    
-    predict1 = predict.sort_values("pred_y",ascending = False )
-    predict2 = predict.sort_values("y",ascending = False )
-    correct = len(list(set(predict1["y"][:k].index) & set(predict2["y"][:k].index)))
-    return correct/k
+def train_baseline(model, data: dict, config: Config,
+                   criterion, name: str = "baseline",
+                   verbose: bool = True) -> dict:
+    """Train a baseline model that takes concatenated weekly input.
+
+    Baselines receive [num_stocks, total_days, features] instead of weekly list.
+    """
+    model = model.to(config.device)
+    init_weights(model)
+
+    optimizer = optim.Adam(
+        model.parameters(), lr=config.lr, weight_decay=config.weight_decay)
+
+    best_val_mrr = -1
+    best_model_state = None
+    patience = 10
+    patience_counter = 0
+    history = []
+
+    num_train = data['train']['x1'].shape[0]
+    week_num = config.week_num
+
+    for epoch in range(config.epochs):
+        model.train()
+        epoch_loss = 0.0
+
+        for t in range(num_train):
+            # Concatenate weeks for baselines
+            weekly_arrays = [
+                data['train'][f'x{w + 1}'][t] for w in range(week_num)
+            ]
+            x_concat = np.concatenate(weekly_arrays, axis=1)
+            x_tensor = torch.tensor(
+                x_concat, dtype=torch.float32).to(config.device)
+
+            y_ret = torch.tensor(
+                data['train']['y_return_ratio'][t],
+                dtype=torch.float32).to(config.device)
+            y_bin = torch.tensor(
+                data['train']['y_up_or_down'][t],
+                dtype=torch.float32).to(config.device)
+
+            reg_out, cls_out = model(x_tensor)
+            loss, _, _, _ = criterion(reg_out, cls_out, y_ret, y_bin)
+
+            optimizer.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            optimizer.step()
+            epoch_loss += loss.item()
+
+        avg_loss = epoch_loss / num_train
+
+        # Validate
+        val_results = _evaluate_baseline_split(
+            model, data, config, split='val')
+        val_mrr = val_results['MRR@5']
+
+        history.append({'epoch': epoch + 1, 'train_loss': avg_loss,
+                        'val_mrr5': val_mrr})
+
+        if val_mrr > best_val_mrr:
+            best_val_mrr = val_mrr
+            best_model_state = copy.deepcopy(model.state_dict())
+            patience_counter = 0
+        else:
+            patience_counter += 1
+
+        if verbose and (epoch + 1) % 5 == 0:
+            print(f"  [{name}] Epoch {epoch+1}/{config.epochs} "
+                  f"loss={avg_loss:.4f} val_MRR@5={val_mrr:.4f}")
+
+        if patience_counter >= patience:
+            if verbose:
+                print(f"  [{name}] Early stopping at epoch {epoch+1}")
+            break
+
+    if best_model_state is not None:
+        model.load_state_dict(best_model_state)
+    test_results = _evaluate_baseline_split(model, data, config, split='test')
+
+    if verbose:
+        print(f"  [{name}] Best val MRR@5={best_val_mrr:.4f} | "
+              f"Test: MRR@5={test_results['MRR@5']:.4f} "
+              f"ACC={test_results['ACC']:.4f}")
+
+    return {
+        'best_val_mrr': best_val_mrr,
+        'test_results': test_results,
+        'history': history,
+        'model_state': best_model_state,
+    }
 
 
-def IRR(test_y,pred_y,k=5):
-    predict = pd.DataFrame([])
-    predict["pred_y"] = pred_y
-    predict["y"] = test_y
-    
-    predict1 = predict.sort_values("pred_y",ascending = False )
-    predict2 = predict.sort_values("y",ascending = False )
-    return sum(predict2["y"][:k]) - sum(predict1["y"][:k])
+def _evaluate_baseline_split(model, data, config, split='val'):
+    """Evaluate baseline on a split."""
+    from evaluate import mrr_at_k, precision_at_k, accuracy
 
-def Acc(test_y,pred_y):
-    test_y = np.ravel(test_y)
-    pred_y = np.ravel(pred_y)
-    pred_y = (pred_y>0)*1
-    acc_score = sum(test_y==pred_y) / len(pred_y)
+    model.eval()
+    split_data = data[split]
+    num_samples = split_data['x1'].shape[0]
+    week_num = config.week_num
 
-    return acc_score
+    all_mrr = {k: [] for k in config.top_k_values}
+    all_prec = {k: [] for k in config.top_k_values}
+    all_acc = []
+
+    with torch.no_grad():
+        for t in range(num_samples):
+            weekly_arrays = [
+                split_data[f'x{w + 1}'][t] for w in range(week_num)
+            ]
+            x_concat = np.concatenate(weekly_arrays, axis=1)
+            x_tensor = torch.tensor(
+                x_concat, dtype=torch.float32).to(config.device)
+
+            reg_out, cls_out = model(x_tensor)
+            y_true = split_data['y_return_ratio'][t]
+            y_binary = split_data['y_up_or_down'][t]
+            preds = reg_out.cpu().numpy().flatten()
+
+            for k in config.top_k_values:
+                all_mrr[k].append(mrr_at_k(y_true, preds, k))
+                all_prec[k].append(precision_at_k(y_true, preds, k))
+            all_acc.append(accuracy(y_binary, preds))
+
+    results = {}
+    for k in config.top_k_values:
+        results[f'MRR@{k}'] = float(np.mean(all_mrr[k]))
+        results[f'Precision@{k}'] = float(np.mean(all_prec[k]))
+    results['ACC'] = float(np.mean(all_acc))
+    return results
 
 
-if __name__ == "__main__":
-    best_metric_IRR, best_metric_MRR, best_results_IRR, best_results_MRR = train(args)
-    print("-------Final result-------")
-    print("[BEST MRR] MAE:%.4f ACC:%.4f MRR:%.4f Precision:%.4f" % tuple(best_metric_MRR))
-    for idx, k in enumerate(ks_list):
-        print("[BEST RESULT MRR with k=%s] MAE:%.4f ACC:%.4f MRR:%.4f Precision:%.4f" % tuple(tuple([k])+tuple(best_results_MRR[idx])))
+def train_multi_run(model_factory, data: dict, config: Config,
+                    criterion_factory, name: str = "model",
+                    num_runs: int = None, is_baseline: bool = False,
+                    verbose: bool = True) -> dict:
+    """Train multiple runs with different seeds and aggregate results.
+
+    Args:
+        model_factory: callable(config) -> model
+        data: splits dict
+        config: Config object
+        criterion_factory: callable(config) -> loss function
+        name: model name
+        num_runs: override config.num_runs
+        is_baseline: if True, use train_baseline instead of train_model
+        verbose: print per-run results
+
+    Returns:
+        dict with 'mean', 'std', 'all_runs' for each metric
+    """
+    if num_runs is None:
+        num_runs = config.num_runs
+
+    all_results = []
+    for run in range(num_runs):
+        seed = config.seed_base + run
+        set_seed(seed)
+        if verbose:
+            print(f"\n--- Run {run+1}/{num_runs} (seed={seed}) ---")
+
+        model = model_factory(config)
+        criterion = criterion_factory(config)
+
+        train_fn = train_baseline if is_baseline else train_model
+        result = train_fn(
+            model, data, config, criterion, name=name, verbose=verbose)
+        all_results.append(result['test_results'])
+
+    # Aggregate
+    all_metrics = {}
+    for key in all_results[0]:
+        values = [r[key] for r in all_results]
+        all_metrics[key] = {
+            'mean': float(np.mean(values)),
+            'std': float(np.std(values)),
+            'values': values,
+        }
+
+    if verbose:
+        print(f"\n=== {name} ({num_runs} runs) ===")
+        for key, stats in all_metrics.items():
+            print(f"  {key}: {stats['mean']:.4f} ± {stats['std']:.4f}")
+
+    return all_metrics
